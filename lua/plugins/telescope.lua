@@ -30,7 +30,7 @@ return {
       },
       extensions = {
         file_browser = {
-          -- theme = "gruvbox-high-contrast",
+          theme = "dropdown",
           initial_mode = "normal",
           hijack_netrw = true,
           layout_config = {
