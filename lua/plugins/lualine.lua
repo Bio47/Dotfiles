@@ -7,12 +7,12 @@ return {
     options = {
       icons_enabled = true,
       theme = "gruvbox",
-      component_separators = "|",
-      section_separators = "",
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
     },
     sections = {
       lualine_c = {
-        'buffers',
+        "buffers",
       },
     },
   },
