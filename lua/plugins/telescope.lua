@@ -4,9 +4,6 @@ return {
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       -- NOTE: If you are having trouble with this installation,
@@ -15,6 +12,9 @@ return {
       cond = function()
         return vim.fn.executable("make") == 1
       end,
+    },
+    {
+      "nvim-telescope/telescope-file-browser.nvim",
     },
   },
   config = function()
@@ -28,9 +28,27 @@ return {
           },
         },
       },
+      extensions = {
+        file_browser = {
+          -- theme = "gruvbox-high-contrast",
+          initial_mode = "normal",
+          hijack_netrw = true,
+          layout_config = {
+            height = 30,
+            prompt_position = "top",
+          },
+          layout_strategy = "horizontal",
+          respect_gitignore = false,
+          hidden = true,
+          grouped = true,
+          previewer = false,
+          sorting_strategy = "ascending",
+        },
+      },
     })
     -- Enable telescope fzf native, if installed
     telescope.load_extension("fzf")
+    telescope.load_extension("file_browser")
 
     local live_grep_git_root = require("util.functions").live_grep_git_root
     vim.api.nvim_create_user_command("LiveGrepGitRoot", live_grep_git_root, {})
