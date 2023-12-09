@@ -19,7 +19,7 @@ local opts = {
     lazy = false,
   },
   install = {
-    colorscheme = { "moonfly" },
+    colorscheme = { 'gruvbox-high-contrast' },
   },
   rtp = {
     disabled_plugins = {
