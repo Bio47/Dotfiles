@@ -4,6 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
+  event = "BufReadPre",
   config = function()
     -- import mason
     local mason = require("mason")
@@ -27,10 +28,10 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
+        "efm",
         "html",
         "cssls",
         "lua_ls",
-        "emmet_ls",
         "pyright",
       },
       -- auto-install configured servers (with lspconfig)
