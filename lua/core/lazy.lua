@@ -32,6 +32,7 @@ local opts = {
       --	"tohtml",
       --"tutor",
       --"zipPlugin",
+      "neotree"
     },
   },
   change_detection = {
