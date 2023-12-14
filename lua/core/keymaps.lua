@@ -13,8 +13,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Neo-tree keymaps
-vim.keymap.set('n', '\\', '<cmd>Neotree toggle<CR>', { desc = 'Neotree reveal' })
-
+-- vim.keymap.set('n', '\\', '<cmd>Neotree toggle<CR>', { desc = 'Neotree reveal' })
+vim.keymap.set('n', '\\', '<cmd>Telescope file_browser<CR>', { desc = 'Neotree reveal' })
 -- Window Management
 vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = 'Split Vertically' })
 vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = 'Split Horizontally' })
